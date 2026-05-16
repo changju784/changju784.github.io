@@ -1,473 +1,435 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jung In Chang</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jung In Chang</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+  <link href="css/dark-styles.css" rel="stylesheet">
 </head>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const projects = Array.from(document.querySelectorAll("#project-list .project"));
-        const itemsPerPage = 3;
-        let currentPage = 1;
-        const totalPages = Math.ceil(projects.length / itemsPerPage);
-
-        const pageIndicator = document.getElementById("pageIndicator");
-        const prevBtn = document.getElementById("prevBtn");
-        const nextBtn = document.getElementById("nextBtn");
-
-        function showPage(page) {
-            const start = (page - 1) * itemsPerPage;
-            const end = start + itemsPerPage;
-
-            projects.forEach((proj, index) => {
-                proj.style.display = (index >= start && index < end) ? "flex" : "none";
-            });
-
-            pageIndicator.textContent = `Page ${page} of ${totalPages}`;
-            prevBtn.disabled = page === 1;
-            nextBtn.disabled = page === totalPages;
-        }
-
-        prevBtn.addEventListener("click", () => {
-            if (currentPage > 1) {
-                currentPage--;
-                showPage(currentPage);
-                scrollToProjects();
-            }
-        });
-
-        nextBtn.addEventListener("click", () => {
-            if (currentPage < totalPages) {
-                currentPage++;
-                showPage(currentPage);
-                scrollToProjects();
-            }
-        });
-
-        function scrollToProjects() {
-            document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
-        }
-
-        // Initialize first page
-        showPage(currentPage);
-    });
-</script>
-
-
 <body>
-    <div id="mobile-menu-open" class="shadow-large">
-        <i class="fa fa-bars" aria-hidden="true"></i>
+
+  <!-- ─── MOBILE HEADER ──────────────────────────────────────── -->
+  <div class="mobile-header">
+    <span class="mobile-name">Jung In Chang</span>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="#about"      class="nav-link" onclick="closeDrawer()"><span class="nav-indicator"></span>About</a>
+    <a href="#experience" class="nav-link" onclick="closeDrawer()"><span class="nav-indicator"></span>Experience</a>
+    <a href="#education"  class="nav-link" onclick="closeDrawer()"><span class="nav-indicator"></span>Education</a>
+    <a href="#projects"   class="nav-link" onclick="closeDrawer()"><span class="nav-indicator"></span>Projects</a>
+    <a href="#skills"     class="nav-link" onclick="closeDrawer()"><span class="nav-indicator"></span>Skills</a>
+    <a href="#contact"    class="nav-link" onclick="closeDrawer()"><span class="nav-indicator"></span>Contact</a>
+  </div>
+
+  <!-- ─── SIDEBAR ───────────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="profile">
+      <img src="images/my_photo.jpg" alt="Jung In Chang" class="profile-photo">
+      <div class="profile-name">Jung In Chang</div>
+      <div class="profile-title">Software Engineer</div>
     </div>
-    <!-- End #mobile-menu-toggle -->
-    <header>
-        <div id="mobile-menu-close">
-            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
-        </div>
-        <ul id="menu" class="shadow">
-            <li>
-                <a href="#about">About</a>
-            </li>
-            <li>
-                <a href="#experience">Experience</a>
-            </li>
-            <li>
-                <a href="#education">Education</a>
-            </li>
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
-    </header>
-    <!-- End header -->
 
-    <div id="lead">
-        <div id="lead-content">
-            <h1>Jung In Chang</h1>
-            <h2>Software Engineer</h2>
-            <a href="images/resume.pdf" class="btn-rounded-white" download="My_Resume.pdf">Download Resume</a>
-        </div>
-        <!-- End #lead-content -->
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Navigation</div>
+      <a href="#about"      class="nav-link active"><span class="nav-indicator"></span>About</a>
+      <a href="#experience" class="nav-link"><span class="nav-indicator"></span>Experience</a>
+      <a href="#education"  class="nav-link"><span class="nav-indicator"></span>Education</a>
+      <a href="#projects"   class="nav-link"><span class="nav-indicator"></span>Projects</a>
+      <a href="#skills"     class="nav-link"><span class="nav-indicator"></span>Skills</a>
+      <a href="#contact"    class="nav-link"><span class="nav-indicator"></span>Contact</a>
+    </nav>
 
-        <div id="lead-overlay"></div>
-
-        <div id="lead-down">
-            <span>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </span>
-        </div>
-        <!-- End #lead-down -->
+    <div class="sidebar-footer">
+      <a href="https://github.com/changju784" target="_blank" class="social-icon" title="GitHub">
+        <i class="fa fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/jung-in-chang-bb0424213/" target="_blank" class="social-icon" title="LinkedIn">
+        <i class="fa fa-linkedin"></i>
+      </a>
+      <a href="https://stackoverflow.com/" target="_blank" class="social-icon" title="Stack Overflow">
+        <i class="fa fa-stack-overflow"></i>
+      </a>
     </div>
-    <!-- End #lead -->
+  </aside>
 
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <!-- Left side: About Me and Description -->
-                <div class="col-md-8">
-                    <h2 class="heading">About Me</h2>
-                    <p style="margin-bottom: 20px;">
-                        Full-stack and ML engineer with 3+ years of industry experience building scalable data-driven
-                        systems and production-ready ML infrastructure. Skilled in designing end-to-end pipelines for
-                        model training, deployment, and serving, and currently focused on integrating LLM through RAG
-                        and MCP servers to deliver intelligent, automated solutions.
-                    </p>
-                </div>
+  <!-- ─── MAIN CONTENT ──────────────────────────────────────── -->
+  <main class="main-content">
 
-                <!-- Right side: My Photo -->
-                <div class="col-md-4">
-                    <img src="images/my_photo.jpg" alt="My Photo"
-                        style="width: 300px; height: 350px; border-radius: 30%;">
-                </div>
-            </div>
+    <!-- ABOUT / LANDING -->
+    <section id="about">
+      <div class="hero-wrap">
+        <p class="hero-eyebrow">Hello, world.</p>
+        <h1 class="hero-name">Jung In Chang</h1>
+        <p class="hero-tagline">Full-Stack &amp; ML Engineer</p>
+        <p class="hero-bio">
+          Full-stack and ML engineer with 3+ years of industry experience building scalable data-driven
+          systems and production-ready ML infrastructure. Skilled in designing end-to-end pipelines for
+          model training, deployment, and serving, and currently focused on integrating LLM through RAG
+          and MCP servers to deliver intelligent, automated solutions.
+        </p>
+        <div class="hero-links">
+          <a href="https://github.com/changju784" target="_blank" class="btn btn-outline">
+            <i class="fa fa-github"></i> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/jung-in-chang-bb0424213/" target="_blank" class="btn btn-outline">
+            <i class="fa fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="mailto:wjddlsdl784@gmail.com" class="btn btn-outline">
+            <i class="fa fa-envelope"></i> wjddlsdl784@gmail.com
+          </a>
+          <a href="images/resume.pdf" class="btn btn-primary" download="Jung_In_Chang_Resume.pdf">
+            <i class="fa fa-download"></i> Resume
+          </a>
         </div>
-    </div>
-    <!-- End #about -->
+      </div>
+    </section>
 
-    <div id="experience" class="background-alt">
-        <h2 class="heading">Experience</h2>
-        <div id="experience-timeline">
-            <div data-date="06/2021 – 11/2021">
-                <h3><a href="https://www.codecrain.com" target="_blank" rel="noopener noreferrer">CodeCrain Inc.</a>
-                </h3>
-                <img src="images/code_crain.png" alt="CodeCrain"
-                    style="width: 30x; height: 30px; border-radius: 30%; margin-left: 5px; margin-bottom: 5px;">
-                <h4>AI/ML Engineer</h4>
-                <p>
-                    Developed the core engines of a review analytics platform integrating advanced NLP techniques such
-                    as ODP classification, named-entity recognition, and sentiment analysis. Designed and optimized
-                    CNN-LSTM architectures, achieving a 10 % improvement in F1-score for sentiment prediction. Built an
-                    automated web crawler and AWS-based data pipeline to collect and preprocess large-scale text
-                    datasets, significantly reducing model training time and manual intervention.
-                </p>
-            </div>
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-tag">Experience</div>
 
-            <div data-date="08/2022 – 06/2025">
-                <h3><a href="https://www.veson.com" target="_blank" rel="noopener noreferrer">Veson Nautical</a></h3>
-                <img src="images/veson_logo.jpg" alt="VesonNautical"
-                    style="width: 30x; height: 30px; border-radius: 30%; margin-left: 5px; margin-bottom: 5px;">
-                <h4>Full Stack Software Engineer</h4>
-                <p>
-                    Contributed to the development of scalable and high-performance maritime SaaS solutions that
-                    enhanced system reliability and client satisfaction. Implemented core features in IMOSX CoCaptain,
-                    an automated billing platform leveraging ML-driven laytime calculations, which supported a major
-                    enterprise contract. Optimized cloud infrastructure and data replication workflows using AWS SNS/SQS
-                    and Lambda, improving latency and system scalability. Streamlined CI/CD pipelines and delivered
-                    user-centric interfaces that improved operational efficiency across Veson’s global client base.
-                </p>
-            </div>
-
-            <!-- <div data-date="September 2015 – September 2016">
-                <h3>Employer Name</h3>
-                <h4>Job Title</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                </p>
-            </div> -->
+      <div class="exp-item">
+        <div class="exp-meta">
+          <a href="https://www.veson.com" target="_blank" rel="noopener noreferrer" class="exp-company">Veson Nautical</a>
+          <span class="exp-date">08/2022 – 06/2025</span>
         </div>
-    </div>
-    <!-- End #experience -->
+        <div class="exp-role">Full Stack Software Engineer</div>
+        <p class="exp-desc">
+          Contributed to the development of scalable and high-performance maritime SaaS solutions that
+          enhanced system reliability and client satisfaction. Implemented core features in IMOSX CoCaptain,
+          an automated billing platform leveraging ML-driven laytime calculations, which supported a major
+          enterprise contract. Optimized cloud infrastructure and data replication workflows using AWS SNS/SQS
+          and Lambda, improving latency and system scalability. Streamlined CI/CD pipelines and delivered
+          user-centric interfaces that improved operational efficiency across Veson's global client base.
+        </p>
+      </div>
 
-    <div id="education">
-        <h2 class="heading">Education</h2>
-        <div class="education-block">
-            <h3><a href="https://www.bu.edu/" target="_blank" rel="noopener noreferrer">Boston University</a></h3>
-            <img src="images/bu_logo.png" alt="BU"
-                style="width: 30x; height: 30px; border-radius: 30%; margin-left: 5px; margin-bottom: 5px;">
-            <span class="education-date">Sept 2019 - May 2022</span>
-            <h4>Bachelor of Science in Computer Science</h4>
-            <p>
-                Graduated with a B.S. in Computer Engineering, Concentration in Machine Learning. <br>
-                Earned Dean's List for 3 semesters
+      <div class="exp-item">
+        <div class="exp-meta">
+          <a href="https://www.codecrain.com" target="_blank" rel="noopener noreferrer" class="exp-company">CodeCrain Inc.</a>
+          <span class="exp-date">06/2021 – 11/2021</span>
+        </div>
+        <div class="exp-role">AI/ML Engineer</div>
+        <p class="exp-desc">
+          Developed the core engines of a review analytics platform integrating advanced NLP techniques such
+          as ODP classification, named-entity recognition, and sentiment analysis. Designed and optimized
+          CNN-LSTM architectures, achieving a 10% improvement in F1-score for sentiment prediction. Built an
+          automated web crawler and AWS-based data pipeline to collect and preprocess large-scale text
+          datasets, significantly reducing model training time and manual intervention.
+        </p>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="section-tag">Education</div>
+
+      <div class="edu-item">
+        <div class="edu-meta">
+          <a href="https://siebelschool.illinois.edu/" target="_blank" rel="noopener noreferrer" class="edu-school">
+            University of Illinois Urbana-Champaign
+          </a>
+          <span class="edu-date">Aug 2025 – Present</span>
+        </div>
+        <div class="edu-degree">Master of Computer Science</div>
+        <p class="edu-desc">Concentration in LLM RAG and MCP server automation.</p>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-meta">
+          <a href="https://www.bu.edu/" target="_blank" rel="noopener noreferrer" class="edu-school">Boston University</a>
+          <span class="edu-date">Sept 2019 – May 2022</span>
+        </div>
+        <div class="edu-degree">Bachelor of Science in Computer Science</div>
+        <p class="edu-desc">
+          Concentration in Machine Learning. Dean's List for 3 semesters.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-tag">Projects</div>
+
+      <div class="project-grid" id="project-list">
+
+        <div class="project-card">
+          <img src="images/trip-circle-detail.jpg" alt="Trip Circle" class="project-card-img">
+          <div class="project-card-body">
+            <div class="project-card-title">Trip Circle</div>
+            <p class="project-card-desc">
+              Collaborative travel-planning app that lets users create, share, and fork trip itineraries.
+              Built with React + TypeScript frontend and a Node.js/Express + MongoDB backend using RESTful APIs and authentication.
             </p>
+            <div class="project-card-links">
+              <a href="https://trip-circle-web.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa fa-external-link"></i> Live Demo
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div class="education-block">
-            <h3><a href="https://siebelschool.illinois.edu/" target="_blank" rel="noopener noreferrer">University of
-                    Illinois Urbana
-                    Champaign</a></h3>
-            <img src="images/uiuc_logo.png" alt="BU"
-                style="width: 30x; height: 30px; border-radius: 30%; margin-left: 5px; margin-bottom: 5px;">
-            <span class="education-date">Aug 2025 - Present</span>
-            <h4>Master of Computer Science</h4>
-            <p>
-                Concentration in LLM RAG and MCP server automation.
+        <div class="project-card">
+          <img src="images/chi-311.png" alt="Chi-311 Agentic AI" class="project-card-img">
+          <div class="project-card-body">
+            <div class="project-card-title">Chi-311 Agentic AI</div>
+            <p class="project-card-desc">
+              MCP-compatible server that exposes automation tools for filing non-emergency 311 service
+              requests in the City of Chicago.
             </p>
-        </div>
-        <!-- End .education-block -->
-
-        <!-- <div class="education-block">
-            <h3>University of Ottawa</h3>
-            <span class="education-date">Sept 2016 - Sept 2017</span>
-            <h4>Bachelor of Science in Computer Science</h4>
-            <ul>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-            </ul>
-        </div> -->
-        <!-- End .education-block -->
-    </div>
-    <!-- End #education -->
-
-    <div id="projects" class="background-alt">
-        <h2 class="heading">Projects</h2>
-        <div class="container">
-            <div class="row" id="project-list">
-                <!-- all .project divs already here -->
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/trip-circle-detail.jpg" style="width: 300px; height: 300px;" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Trip Circle </h3>
-                        <p>
-                            TripCircle is a collaborative travel-planning app that lets users create, share, and fork
-                            trip itineraries with others. It is built with React + TypeScript on the frontend and a
-                            Node.js/Express + MongoDB backend using RESTful APIs and authentication.
-
-                        </p>
-                        <div className="flex items-center">
-                            <span>
-                                <a href="https://trip-circle-web.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                    className="px-4 py-2 rounded-md bg-primary text-white hover:opacity-90">
-                                    Live Demo
-                                </a>
-                            </span>
-
-                            <span className="mx-3">|</span>
-
-                            <span>
-                                <a href="/projects/tripcircle"
-                                    className="px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100">
-                                    View Project
-                                </a>
-                            </span>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/chi-311.png" style="width: 300px; height: 300px;" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Chi-311 Agentic AI </h3>
-                        <p>
-                            MCP-compatible server that exposes automation tools for filing non-emergency 311 service
-                            requests in the City of Chicago.
-
-                        </p>
-                        <a href="https://github.com/changju784/chi311-mcp-server">View Project</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/smse.jpg" style="width: 300px; height: 300px;" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Social Media Stock Estimator </h3>
-                        <p>
-                            SMSE: "Social-Media Stock Estimator" integrates large-scale Reddit sentiment analysis with
-                            market
-                            data to forecast short-horizon stock returns. The system transforms raw social discussions
-                            into structured signals that feed a regularized prediction model.
-                        </p>
-                        <a href="https://github.com/changju784/social-media-stock-estimator">View
-                            Project</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/wsiw.png" style="width: 300px; height: 300px;" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>What Should I Wear</h3>
-                        <p>
-                            A fine-tuned vision-language model application for weather-aware outfit recommendation using
-                            multimodal image and environmental data.
-                        </p>
-                        <a href="https://github.com/changju784/what_should_i_wear">View Project</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/system_diagram.png" style="width: 300px; height: 300px;" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>AT&T 5G Network Performance Testing </h3>
-                        <p>
-                            Android app (Kotlin-based) that automates network testing and provides real-time updates in
-                            Firebase.
-                            Multi-regression ML model with scikit-learn to predict 5G speeds based on GPS coordinates
-                            and altitudes.
-
-                        </p>
-                        <a href="https://github.com/changju784/5G-Network-Drone-Testing">View Project</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/route_recommend.png" style="width: 300px; height: 300px;" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Route Recommendation App</h3>
-                        <p>
-                            Web Application using OpenStreet API to find shortest path based on Dijkstra and A* search
-                            GUI powered by python Flask server.
-                        </p>
-                        <a href="https://github.com/changju784/Route_Recommendation_App/tree/main">View Project</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/moor_control_logo.png" style="width: 300px; height: 300px;" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Moor Control Business Plan</h3>
-                        <p>
-                            Business Plan for Automated Mooring System to replace humans in the mooring process with
-                            sophisticated automation, increasing safety and efficiency.
-                        </p>
-                        <a href="images/moor_control.pdf">View Project</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
+            <div class="project-card-links">
+              <a href="https://github.com/changju784/chi311-mcp-server" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa fa-github"></i> View on GitHub
+              </a>
             </div>
+          </div>
+        </div>
 
-            <!-- Pagination controls -->
-            <div id="pagination" style="text-align:center; margin-top:25px;">
-                <button id="prevBtn" class="page-btn" aria-label="Previous page">←</button>
-                <span id="pageIndicator" style="font-weight:600; margin:0 8px;">Page 1 of 1</span>
-                <button id="nextBtn" class="page-btn" aria-label="Next page">→</button>
+        <div class="project-card">
+          <img src="images/smse.jpg" alt="Social Media Stock Estimator" class="project-card-img">
+          <div class="project-card-body">
+            <div class="project-card-title">Social Media Stock Estimator</div>
+            <p class="project-card-desc">
+              Integrates large-scale Reddit sentiment analysis with market data to forecast short-horizon
+              stock returns. Transforms raw social discussions into structured signals for a regularized prediction model.
+            </p>
+            <div class="project-card-links">
+              <a href="https://github.com/changju784/social-media-stock-estimator" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa fa-github"></i> View on GitHub
+              </a>
             </div>
+          </div>
         </div>
-    </div>
 
-    <div id="skills">
-        <h2 class="heading">Skills</h2>
-        <ul>
-            <li>Full Stack</li>
-            <li>Distributed System</li>
-            <li>DevOps</li>
-            <li>MLOps</li>
-            <li>Deep Learning</li>
-            <li>Data Mining</li>
-            <li>NLP</li>
-            <li>Typescript</li>
-            <li>Python</li>
-            <li>React</li>
-            <li>Node.js</li>
-            <li>Next.js</li>
-            <li>AWS</li>
-            <li>Docker</li>
-            <li>Kubernetes</li>
-            <li>GraphQL</li>
-            <li>C++</li>
-            <li>C</li>
-            <li>C#</li>
-            <li>MongoDB</li>
-            <li>MySQL</li>
-        </ul>
-    </div>
-    <!-- End #skills -->
-
-    <div id="contact">
-        <h2>Get in Touch</h2>
-        <div id="contact-form">
-            <form method="POST" action="https://formspree.io/f/mldeyabr">
-                <input type="hidden" name="_subject" value="Contact request from personal website" />
-                <input type="email" name="_replyto" placeholder="Your email" required>
-                <textarea name="message" placeholder="Your message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
+        <div class="project-card">
+          <img src="images/wsiw.png" alt="What Should I Wear" class="project-card-img">
+          <div class="project-card-body">
+            <div class="project-card-title">What Should I Wear</div>
+            <p class="project-card-desc">
+              Fine-tuned vision-language model application for weather-aware outfit recommendation using
+              multimodal image and environmental data.
+            </p>
+            <div class="project-card-links">
+              <a href="https://github.com/changju784/what_should_i_wear" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa fa-github"></i> View on GitHub
+              </a>
+            </div>
+          </div>
         </div>
-        <!-- End #contact-form -->
-    </div>
-    <!-- End #contact -->
+
+        <div class="project-card">
+          <img src="images/system_diagram.png" alt="AT&T 5G Network Performance Testing" class="project-card-img">
+          <div class="project-card-body">
+            <div class="project-card-title">AT&amp;T 5G Network Performance Testing</div>
+            <p class="project-card-desc">
+              Android app (Kotlin) that automates network testing with real-time Firebase updates.
+              Multi-regression ML model with scikit-learn to predict 5G speeds based on GPS coordinates and altitude.
+            </p>
+            <div class="project-card-links">
+              <a href="https://github.com/changju784/5G-Network-Drone-Testing" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa fa-github"></i> View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="images/route_recommend.png" alt="Route Recommendation App" class="project-card-img">
+          <div class="project-card-body">
+            <div class="project-card-title">Route Recommendation App</div>
+            <p class="project-card-desc">
+              Web application using the OpenStreet API to find shortest paths based on Dijkstra and A* search.
+              GUI powered by a Python Flask server.
+            </p>
+            <div class="project-card-links">
+              <a href="https://github.com/changju784/Route_Recommendation_App/tree/main" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa fa-github"></i> View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="images/moor_control_logo.png" alt="Moor Control Business Plan" class="project-card-img">
+          <div class="project-card-body">
+            <div class="project-card-title">Moor Control Business Plan</div>
+            <p class="project-card-desc">
+              Business plan for an automated mooring system to replace manual mooring with sophisticated
+              automation, increasing safety and efficiency in maritime operations.
+            </p>
+            <div class="project-card-links">
+              <a href="images/moor_control.pdf" target="_blank" class="project-link">
+                <i class="fa fa-file-pdf-o"></i> View PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pagination">
+        <button id="prevBtn" class="page-btn" aria-label="Previous page">&#8592;</button>
+        <span id="pageIndicator">Page 1 of 1</span>
+        <button id="nextBtn" class="page-btn" aria-label="Next page">&#8594;</button>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-tag">Skills</div>
+      <div class="skills-wrap">
+        <span class="skill-tag">Full Stack</span>
+        <span class="skill-tag">Distributed Systems</span>
+        <span class="skill-tag">DevOps</span>
+        <span class="skill-tag">MLOps</span>
+        <span class="skill-tag">Deep Learning</span>
+        <span class="skill-tag">Data Mining</span>
+        <span class="skill-tag">NLP</span>
+        <span class="skill-tag">TypeScript</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Next.js</span>
+        <span class="skill-tag">AWS</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Kubernetes</span>
+        <span class="skill-tag">GraphQL</span>
+        <span class="skill-tag">C++</span>
+        <span class="skill-tag">C</span>
+        <span class="skill-tag">C#</span>
+        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">MySQL</span>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-tag">Contact</div>
+      <div class="contact-form">
+        <form method="POST" action="https://formspree.io/f/mldeyabr">
+          <input type="hidden" name="_subject" value="Contact request from personal website">
+          <div class="form-group">
+            <input type="email" name="_replyto" class="form-input" placeholder="Your email" required>
+          </div>
+          <div class="form-group">
+            <textarea name="message" class="form-input" placeholder="Your message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </section>
 
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 copyright">
-                    <p>
-                        Copyright &copy; <span id="current-year">2024</span> Jung In Chang
-                    </p>
-                </div>
-                <div class="col-sm-2 top">
-                    <span id="to-top">
-                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <div class="col-sm-5 social">
-                    <ul>
-                        <li>
-                            <a href="https://github.com/changju784" target="_blank"><i class="fa fa-github"
-                                    aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow"
-                                    aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/jung-in-chang-bb0424213/" target="_blank"><i
-                                    class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"
-                                    aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus"
-                                    aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+      <span class="footer-copy">
+        &copy; <span id="current-year"></span> Jung In Chang
+      </span>
+      <button class="footer-top" id="to-top" aria-label="Back to top">
+        <i class="fa fa-chevron-up"></i> Top
+      </button>
     </footer>
-    <!-- End footer -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/scripts.min.js"></script>
+  </main>
+
+  <script>
+    // Current year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Scroll to top
+    document.getElementById('to-top').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Mobile drawer
+    const hamburger = document.getElementById('hamburger');
+    const drawer = document.getElementById('mobile-drawer');
+
+    hamburger.addEventListener('click', () => {
+      drawer.classList.toggle('open');
+      hamburger.innerHTML = drawer.classList.contains('open')
+        ? '<i class="fa fa-times"></i>'
+        : '<i class="fa fa-bars"></i>';
+    });
+
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      hamburger.innerHTML = '<i class="fa fa-bars"></i>';
+    }
+
+    // Active nav link via IntersectionObserver
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.sidebar-nav .nav-link');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.sidebar-nav .nav-link[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+
+    // Smooth scroll for sidebar nav
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Project pagination
+    const projects = Array.from(document.querySelectorAll('#project-list .project-card'));
+    const itemsPerPage = 3;
+    let currentPage = 1;
+    const totalPages = Math.ceil(projects.length / itemsPerPage);
+
+    const pageIndicator = document.getElementById('pageIndicator');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function showPage(page) {
+      const start = (page - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      projects.forEach((proj, i) => {
+        proj.style.display = (i >= start && i < end) ? 'flex' : 'none';
+      });
+      pageIndicator.textContent = `Page ${page} of ${totalPages}`;
+      prevBtn.disabled = page === 1;
+      nextBtn.disabled = page === totalPages;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+        document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+        document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    showPage(currentPage);
+  </script>
+
 </body>
-
 </html>
