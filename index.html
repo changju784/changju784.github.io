@@ -13,83 +13,118 @@
 
 <body>
 
-  <!-- ─── MOBILE HEADER ──────────────────────────────────────── -->
-  <div class="mobile-header">
-    <span class="mobile-name">Jung In Chang</span>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <i class="fa fa-bars"></i>
-    </button>
-  </div>
+  <!-- ─── TOP HEADER ────────────────────────────────────────── -->
+  <header class="top-header">
+    <div class="header-inner">
+      <a href="#about" class="header-logo">
+        <span>JC</span>
+        Jung In Chang
+      </a>
 
+      <nav class="header-nav" id="header-nav">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="hamburger-btn" id="hamburger" aria-label="Open menu">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
   <div class="mobile-drawer" id="mobile-drawer">
-    <a href="#about"      class="nav-link" onclick="closeDrawer()"><span class="nav-indicator"></span>About</a>
-    <a href="#experience" class="nav-link" onclick="closeDrawer()"><span class="nav-indicator"></span>Experience</a>
-    <a href="#education"  class="nav-link" onclick="closeDrawer()"><span class="nav-indicator"></span>Education</a>
-    <a href="#projects"   class="nav-link" onclick="closeDrawer()"><span class="nav-indicator"></span>Projects</a>
-    <a href="#skills"     class="nav-link" onclick="closeDrawer()"><span class="nav-indicator"></span>Skills</a>
-    <a href="#contact"    class="nav-link" onclick="closeDrawer()"><span class="nav-indicator"></span>Contact</a>
+    <a href="#about" onclick="closeDrawer()">About</a>
+    <a href="#experience" onclick="closeDrawer()">Experience</a>
+    <a href="#education" onclick="closeDrawer()">Education</a>
+    <a href="#projects" onclick="closeDrawer()">Projects</a>
+    <a href="#skills" onclick="closeDrawer()">Skills</a>
+    <a href="#contact" onclick="closeDrawer()">Contact</a>
   </div>
 
-  <!-- ─── SIDEBAR ───────────────────────────────────────────── -->
-  <aside class="sidebar">
-    <div class="profile">
-      <img src="images/my_photo.jpg" alt="Jung In Chang" class="profile-photo">
-      <div class="profile-name">Jung In Chang</div>
-      <div class="profile-title">Software Engineer</div>
-    </div>
+  <!-- ─── MAIN ──────────────────────────────────────────────── -->
+  <main>
 
-    <nav class="sidebar-nav">
-      <div class="nav-section-label">Navigation</div>
-      <a href="#about"      class="nav-link active"><span class="nav-indicator"></span>About</a>
-      <a href="#experience" class="nav-link"><span class="nav-indicator"></span>Experience</a>
-      <a href="#education"  class="nav-link"><span class="nav-indicator"></span>Education</a>
-      <a href="#projects"   class="nav-link"><span class="nav-indicator"></span>Projects</a>
-      <a href="#skills"     class="nav-link"><span class="nav-indicator"></span>Skills</a>
-      <a href="#contact"    class="nav-link"><span class="nav-indicator"></span>Contact</a>
-    </nav>
-
-    <div class="sidebar-footer">
-      <a href="https://github.com/changju784" target="_blank" class="social-icon" title="GitHub">
-        <i class="fa fa-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/jung-in-chang-bb0424213/" target="_blank" class="social-icon" title="LinkedIn">
-        <i class="fa fa-linkedin"></i>
-      </a>
-      <a href="https://stackoverflow.com/" target="_blank" class="social-icon" title="Stack Overflow">
-        <i class="fa fa-stack-overflow"></i>
-      </a>
-    </div>
-  </aside>
-
-  <!-- ─── MAIN CONTENT ──────────────────────────────────────── -->
-  <main class="main-content">
-
-    <!-- ABOUT / LANDING -->
+    <!-- HERO / ABOUT -->
     <section id="about">
-      <div class="hero-wrap">
-        <p class="hero-eyebrow">Hello, world.</p>
-        <h1 class="hero-name">Jung In Chang</h1>
-        <p class="hero-tagline">Full-Stack &amp; ML Engineer</p>
-        <p class="hero-bio">
-          Full-stack and ML engineer with 3+ years of industry experience building scalable data-driven
-          systems and production-ready ML infrastructure. Skilled in designing end-to-end pipelines for
-          model training, deployment, and serving, and currently focused on integrating LLM through RAG
-          and MCP servers to deliver intelligent, automated solutions.
-        </p>
-        <div class="hero-links">
-          <a href="https://github.com/changju784" target="_blank" class="btn btn-outline">
-            <i class="fa fa-github"></i> GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/jung-in-chang-bb0424213/" target="_blank" class="btn btn-outline">
-            <i class="fa fa-linkedin"></i> LinkedIn
-          </a>
-          <a href="mailto:wjddlsdl784@gmail.com" class="btn btn-outline">
-            <i class="fa fa-envelope"></i> wjddlsdl784@gmail.com
-          </a>
-          <a href="images/resume.pdf" class="btn btn-primary" download="Jung_In_Chang_Resume.pdf">
-            <i class="fa fa-download"></i> Resume
-          </a>
+      <div class="hero-grid">
+
+        <!-- Left: bio -->
+        <div class="hero-left">
+          <div class="hero-photo-wrap">
+            <img src="images/my_photo.jpg" alt="Jung In Chang" class="hero-photo">
+            <span class="hero-photo-badge">JC</span>
+          </div>
+
+          <p class="hero-greeting">Hi! I'm</p>
+          <h1 class="hero-name"><span class="accent">Jung In</span> Chang</h1>
+          <p class="hero-title">Software Engineer</p>
+
+          <p class="hero-bio">
+            Full-stack &amp; ML engineer with 3+ years of industry experience building high-performance,
+            scalable infrastructure. Specialized in production-ready ML systems, large-scale data pipelines,
+            and optimized backend architectures. Currently focusing on LLM/RAG systems and MCP server automation.
+          </p>
+
+          <div class="hero-links">
+            <a href="https://github.com/changju784" target="_blank" class="btn btn-outline">
+              <i class="fa fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/jung-in-chang-bb0424213/" target="_blank" class="btn btn-outline">
+              <i class="fa fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="mailto:wjddlsdl784@gmail.com" class="btn btn-outline">
+              <i class="fa fa-envelope"></i> Email
+            </a>
+            <a href="images/resume.pdf" download="Jung_In_Chang_Resume.pdf" class="btn btn-primary">
+              <i class="fa fa-download"></i> Resume
+            </a>
+          </div>
         </div>
+
+        <!-- Right: JSON panel -->
+        <div class="json-panel">
+          <div class="json-panel-titlebar">
+            <div class="traffic-lights">
+              <span class="tl tl-red"></span>
+              <span class="tl tl-yellow"></span>
+              <span class="tl tl-green"></span>
+            </div>
+            <span class="json-panel-filename">profile.json</span>
+          </div>
+          <div class="json-panel-body">
+            <pre class="json-code"><span class="jbr">{</span>
+  <span class="jk">"name"</span><span class="jco">:</span>        <span class="js">"Jung In Chang"</span><span class="jco">,</span>
+  <span class="jk">"location"</span><span class="jco">:</span>    <span class="js">"Chicago, IL"</span><span class="jco">,</span>
+  <span class="jk">"role"</span><span class="jco">:</span>        <span class="js">"Software Engineer"</span><span class="jco">,</span>
+  <span class="jk">"experience"</span><span class="jco">:</span>  <span class="js">"3+ years"</span><span class="jco">,</span>
+
+  <span class="jk">"education"</span><span class="jco">:</span> <span class="jbr">{</span>
+    <span class="jk">"current"</span><span class="jco">:</span> <span class="js">"M.S. CS @ UIUC"</span><span class="jco">,</span>
+    <span class="jk">"past"</span><span class="jco">:</span>    <span class="js">"B.S. CE @ Boston University"</span>
+  <span class="jbr">}</span><span class="jco">,</span>
+
+  <span class="jk">"focus"</span><span class="jco">:</span> <span class="jlb">[</span>
+    <span class="js">"Full-Stack Engineering"</span><span class="jco">,</span>
+    <span class="js">"ML Infrastructure"</span><span class="jco">,</span>
+    <span class="js">"Distributed Systems"</span>
+  <span class="jlb">]</span><span class="jco">,</span>
+
+  <span class="jk">"stack"</span><span class="jco">:</span> <span class="jlb">[</span>
+    <span class="js">"TypeScript"</span><span class="jco">,</span> <span class="js">"Python"</span><span class="jco">,</span>
+    <span class="js">"React"</span><span class="jco">,</span> <span class="js">"Node.js"</span><span class="jco">,</span> <span class="js">"AWS"</span>
+  <span class="jlb">]</span><span class="jco">,</span>
+
+  <span class="jk">"openTo"</span><span class="jco">:</span>      <span class="js">"Full-time &amp; Internships"</span><span class="jco">,</span>
+  <span class="jk">"github"</span><span class="jco">:</span>      <span class="js">"changju784"</span>
+<span class="jbr">}</span></pre>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -99,7 +134,9 @@
 
       <div class="exp-item">
         <div class="exp-meta">
-          <a href="https://www.veson.com" target="_blank" rel="noopener noreferrer" class="exp-company">Veson Nautical</a>
+          <a href="https://www.veson.com" target="_blank" rel="noopener noreferrer" class="exp-company">
+            <img src="images/veson_logo.jpg" alt="" class="org-logo"> Veson Nautical
+          </a>
           <span class="exp-date">08/2022 – 06/2025</span>
         </div>
         <div class="exp-role">Full Stack Software Engineer</div>
@@ -115,7 +152,9 @@
 
       <div class="exp-item">
         <div class="exp-meta">
-          <a href="https://www.codecrain.com" target="_blank" rel="noopener noreferrer" class="exp-company">CodeCrain Inc.</a>
+          <a href="https://www.codecrain.com" target="_blank" rel="noopener noreferrer" class="exp-company">
+            <img src="images/code_crain.png" alt="" class="org-logo"> CodeCrain Inc.
+          </a>
           <span class="exp-date">06/2021 – 11/2021</span>
         </div>
         <div class="exp-role">AI/ML Engineer</div>
@@ -136,7 +175,7 @@
       <div class="edu-item">
         <div class="edu-meta">
           <a href="https://siebelschool.illinois.edu/" target="_blank" rel="noopener noreferrer" class="edu-school">
-            University of Illinois Urbana-Champaign
+            <img src="images/uiuc_logo.png" alt="" class="org-logo"> University of Illinois Urbana-Champaign
           </a>
           <span class="edu-date">Aug 2025 – Present</span>
         </div>
@@ -146,13 +185,13 @@
 
       <div class="edu-item">
         <div class="edu-meta">
-          <a href="https://www.bu.edu/" target="_blank" rel="noopener noreferrer" class="edu-school">Boston University</a>
+          <a href="https://www.bu.edu/" target="_blank" rel="noopener noreferrer" class="edu-school">
+            <img src="images/bu_logo.png" alt="" class="org-logo"> Boston University
+          </a>
           <span class="edu-date">Sept 2019 – May 2022</span>
         </div>
-        <div class="edu-degree">Bachelor of Science in Computer Science</div>
-        <p class="edu-desc">
-          Concentration in Machine Learning. Dean's List for 3 semesters.
-        </p>
+        <div class="edu-degree">Bachelor of Science in Computer Engineering</div>
+        <p class="edu-desc">Concentration in Machine Learning. Dean's List for 3 semesters.</p>
       </div>
     </section>
 
@@ -167,11 +206,12 @@
           <div class="project-card-body">
             <div class="project-card-title">Trip Circle</div>
             <p class="project-card-desc">
-              Collaborative travel-planning app that lets users create, share, and fork trip itineraries.
-              Built with React + TypeScript frontend and a Node.js/Express + MongoDB backend using RESTful APIs and authentication.
+              Collaborative travel-planning app to create, share, and fork trip itineraries.
+              React + TypeScript frontend with Node.js/Express + MongoDB backend.
             </p>
             <div class="project-card-links">
-              <a href="https://trip-circle-web.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+              <a href="https://trip-circle-web.vercel.app/" target="_blank" rel="noopener noreferrer"
+                class="project-link">
                 <i class="fa fa-external-link"></i> Live Demo
               </a>
             </div>
@@ -183,12 +223,13 @@
           <div class="project-card-body">
             <div class="project-card-title">Chi-311 Agentic AI</div>
             <p class="project-card-desc">
-              MCP-compatible server that exposes automation tools for filing non-emergency 311 service
+              MCP-compatible server exposing automation tools for filing non-emergency 311 service
               requests in the City of Chicago.
             </p>
             <div class="project-card-links">
-              <a href="https://github.com/changju784/chi311-mcp-server" target="_blank" rel="noopener noreferrer" class="project-link">
-                <i class="fa fa-github"></i> View on GitHub
+              <a href="https://github.com/changju784/chi311-mcp-server" target="_blank" rel="noopener noreferrer"
+                class="project-link">
+                <i class="fa fa-github"></i> GitHub
               </a>
             </div>
           </div>
@@ -199,12 +240,13 @@
           <div class="project-card-body">
             <div class="project-card-title">Social Media Stock Estimator</div>
             <p class="project-card-desc">
-              Integrates large-scale Reddit sentiment analysis with market data to forecast short-horizon
-              stock returns. Transforms raw social discussions into structured signals for a regularized prediction model.
+              Large-scale Reddit sentiment analysis integrated with market data to forecast
+              short-horizon stock returns via a regularized prediction model.
             </p>
             <div class="project-card-links">
-              <a href="https://github.com/changju784/social-media-stock-estimator" target="_blank" rel="noopener noreferrer" class="project-link">
-                <i class="fa fa-github"></i> View on GitHub
+              <a href="https://github.com/changju784/social-media-stock-estimator" target="_blank"
+                rel="noopener noreferrer" class="project-link">
+                <i class="fa fa-github"></i> GitHub
               </a>
             </div>
           </div>
@@ -215,12 +257,13 @@
           <div class="project-card-body">
             <div class="project-card-title">What Should I Wear</div>
             <p class="project-card-desc">
-              Fine-tuned vision-language model application for weather-aware outfit recommendation using
-              multimodal image and environmental data.
+              Fine-tuned vision-language model for weather-aware outfit recommendation
+              using multimodal image and environmental data.
             </p>
             <div class="project-card-links">
-              <a href="https://github.com/changju784/what_should_i_wear" target="_blank" rel="noopener noreferrer" class="project-link">
-                <i class="fa fa-github"></i> View on GitHub
+              <a href="https://github.com/changju784/what_should_i_wear" target="_blank" rel="noopener noreferrer"
+                class="project-link">
+                <i class="fa fa-github"></i> GitHub
               </a>
             </div>
           </div>
@@ -231,12 +274,13 @@
           <div class="project-card-body">
             <div class="project-card-title">AT&amp;T 5G Network Performance Testing</div>
             <p class="project-card-desc">
-              Android app (Kotlin) that automates network testing with real-time Firebase updates.
-              Multi-regression ML model with scikit-learn to predict 5G speeds based on GPS coordinates and altitude.
+              Kotlin Android app automating 5G network tests with real-time Firebase updates.
+              scikit-learn multi-regression model predicting speeds from GPS and altitude data.
             </p>
             <div class="project-card-links">
-              <a href="https://github.com/changju784/5G-Network-Drone-Testing" target="_blank" rel="noopener noreferrer" class="project-link">
-                <i class="fa fa-github"></i> View on GitHub
+              <a href="https://github.com/changju784/5G-Network-Drone-Testing" target="_blank" rel="noopener noreferrer"
+                class="project-link">
+                <i class="fa fa-github"></i> GitHub
               </a>
             </div>
           </div>
@@ -247,12 +291,13 @@
           <div class="project-card-body">
             <div class="project-card-title">Route Recommendation App</div>
             <p class="project-card-desc">
-              Web application using the OpenStreet API to find shortest paths based on Dijkstra and A* search.
-              GUI powered by a Python Flask server.
+              Web app using OpenStreet API to find shortest paths via Dijkstra and A* search,
+              with a Python Flask GUI.
             </p>
             <div class="project-card-links">
-              <a href="https://github.com/changju784/Route_Recommendation_App/tree/main" target="_blank" rel="noopener noreferrer" class="project-link">
-                <i class="fa fa-github"></i> View on GitHub
+              <a href="https://github.com/changju784/Route_Recommendation_App/tree/main" target="_blank"
+                rel="noopener noreferrer" class="project-link">
+                <i class="fa fa-github"></i> GitHub
               </a>
             </div>
           </div>
@@ -263,8 +308,8 @@
           <div class="project-card-body">
             <div class="project-card-title">Moor Control Business Plan</div>
             <p class="project-card-desc">
-              Business plan for an automated mooring system to replace manual mooring with sophisticated
-              automation, increasing safety and efficiency in maritime operations.
+              Business plan for an automated mooring system replacing manual mooring
+              with sophisticated automation to increase maritime safety and efficiency.
             </p>
             <div class="project-card-links">
               <a href="images/moor_control.pdf" target="_blank" class="project-link">
@@ -331,11 +376,9 @@
     </section>
 
     <footer>
-      <span class="footer-copy">
-        &copy; <span id="current-year"></span> Jung In Chang
-      </span>
-      <button class="footer-top" id="to-top" aria-label="Back to top">
-        <i class="fa fa-chevron-up"></i> Top
+      <span class="footer-copy">&copy; <span id="current-year"></span> Jung In Chang</span>
+      <button class="footer-top" id="to-top">
+        <i class="fa fa-chevron-up"></i> Back to top
       </button>
     </footer>
 
@@ -345,7 +388,7 @@
     // Current year
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    // Scroll to top
+    // Back to top
     document.getElementById('to-top').addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
@@ -355,8 +398,8 @@
     const drawer = document.getElementById('mobile-drawer');
 
     hamburger.addEventListener('click', () => {
-      drawer.classList.toggle('open');
-      hamburger.innerHTML = drawer.classList.contains('open')
+      const open = drawer.classList.toggle('open');
+      hamburger.innerHTML = open
         ? '<i class="fa fa-times"></i>'
         : '<i class="fa fa-bars"></i>';
     });
@@ -366,23 +409,23 @@
       hamburger.innerHTML = '<i class="fa fa-bars"></i>';
     }
 
-    // Active nav link via IntersectionObserver
+    // Active nav link tracking
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.sidebar-nav .nav-link');
+    const navLinks = document.querySelectorAll('.header-nav a');
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           navLinks.forEach(l => l.classList.remove('active'));
-          const active = document.querySelector(`.sidebar-nav .nav-link[href="#${entry.target.id}"]`);
+          const active = document.querySelector(`.header-nav a[href="#${entry.target.id}"]`);
           if (active) active.classList.add('active');
         }
       });
-    }, { rootMargin: '-30% 0px -60% 0px' });
+    }, { rootMargin: '-20% 0px -70% 0px' });
 
     sections.forEach(s => observer.observe(s));
 
-    // Smooth scroll for sidebar nav
+    // Smooth scroll for header nav
     navLinks.forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
@@ -432,4 +475,5 @@
   </script>
 
 </body>
+
 </html>
