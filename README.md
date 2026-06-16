@@ -17,4 +17,4 @@ To make edits or debug locally, update and manage the `index.html` file.
 You can test changes by opening the file directly in your browser or serving it via a local HTTP server.
 
 ## 🌍 Access
-👉 [Visit my portfolio here](https://changju784.github.io/)
+👉 [Visit my portfolio here](https://jungin.dev)
