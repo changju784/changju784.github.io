@@ -62,7 +62,7 @@
 
           <p class="hero-greeting">Hi! I'm</p>
           <h1 class="hero-name"><span class="accent">Jung In</span> Chang</h1>
-          <p class="hero-title">Software Engineer</p>
+          <p class="hero-title">AI Infrastructure Engineer</p>
 
           <p class="hero-bio">
             Building AI infra where milliseconds matter — from GPU cluster orchestration to inference serving, down to
@@ -100,8 +100,8 @@
           <div class="json-panel-body">
             <pre class="json-code"><span class="jbr">{</span>
   <span class="jk">"name"</span><span class="jco">:</span>        <span class="js">"Jung In Chang"</span><span class="jco">,</span>
-  <span class="jk">"location"</span><span class="jco">:</span>    <span class="js">"Chicago, IL"</span><span class="jco">,</span>
-  <span class="jk">"role"</span><span class="jco">:</span>        <span class="js">"Software Engineer"</span><span class="jco">,</span>
+  <span class="jk">"location"</span><span class="jco">:</span>    <span class="js">"San Jose, CA"</span><span class="jco">,</span>
+  <span class="jk">"role"</span><span class="jco">:</span>        <span class="js">"AI Infrastructure Engineer"</span><span class="jco">,</span>
   <span class="jk">"experience"</span><span class="jco">:</span>  <span class="js">"3+ years"</span><span class="jco">,</span>
 
   <span class="jk">"education"</span><span class="jco">:</span> <span class="jbr">{</span>
@@ -110,14 +110,14 @@
   <span class="jbr">}</span><span class="jco">,</span>
 
   <span class="jk">"focus"</span><span class="jco">:</span> <span class="jlb">[</span>
-    <span class="js">"Full-Stack Engineering"</span><span class="jco">,</span>
-    <span class="js">"ML Infrastructure"</span><span class="jco">,</span>
-    <span class="js">"Distributed Systems"</span>
+    <span class="js">"AI Infrastructure"</span><span class="jco">,</span>
+    <span class="js">"LLM Inference Serving"</span><span class="jco">,</span>
+    <span class="js">"GPU Orchestration"</span>
   <span class="jlb">]</span><span class="jco">,</span>
 
   <span class="jk">"stack"</span><span class="jco">:</span> <span class="jlb">[</span>
-    <span class="js">"TypeScript"</span><span class="jco">,</span> <span class="js">"Python"</span><span class="jco">,</span>
-    <span class="js">"React"</span><span class="jco">,</span> <span class="js">"Node.js"</span><span class="jco">,</span> <span class="js">"AWS"</span>
+    <span class="js">"Python"</span><span class="jco">,</span> <span class="js">"C++"</span><span class="jco">,</span>
+    <span class="js">"Kubernetes"</span><span class="jco">,</span> <span class="js">"vLLM / SGLang"</span><span class="jco">,</span> <span class="js">"Prometheus"</span>
   <span class="jlb">]</span><span class="jco">,</span>
 
   <span class="jk">"openTo"</span><span class="jco">:</span>      <span class="js">"Full-time &amp; Internships"</span><span class="jco">,</span>
@@ -135,6 +135,21 @@
 
       <div class="exp-item">
         <div class="exp-meta">
+          <span class="exp-company">SK Hynix</span>
+          <span class="exp-date">06/2026 – 08/2026</span>
+        </div>
+        <div class="exp-role">AI Cluster Engineering Intern</div>
+        <p class="exp-desc">
+          Engineered benchmarking and evaluation workflows for a heterogeneous AI datacenter testbed,
+          measuring LLM inference efficiency across GPU, memory, and network configurations to guide
+          TCO optimization. Established the Kubernetes orchestration foundation for multi-tenant GPU
+          infrastructure, deploying workload isolation and scheduling controls to serve multiple
+          inference frameworks concurrently on shared hardware.
+        </p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-meta">
           <a href="https://www.veson.com" target="_blank" rel="noopener noreferrer" class="exp-company">
             <img src="images/veson_logo.jpg" alt="" class="org-logo"> Veson Nautical
           </a>
@@ -142,12 +157,12 @@
         </div>
         <div class="exp-role">Full Stack Software Engineer</div>
         <p class="exp-desc">
-          Contributed to the development of scalable and high-performance maritime SaaS solutions that
-          enhanced system reliability and client satisfaction. Implemented core features in IMOSX CoCaptain,
-          an automated billing platform leveraging ML-driven laytime calculations, which supported a major
-          enterprise contract. Optimized cloud infrastructure and data replication workflows using AWS SNS/SQS
-          and Lambda, improving latency and system scalability. Streamlined CI/CD pipelines and delivered
-          user-centric interfaces that improved operational efficiency across Veson's global client base.
+          Built and scaled backend infrastructure for maritime SaaS platforms handling high-throughput
+          enterprise workloads. Engineered core services for IMOSX CoCaptain, an automated billing
+          platform with ML-driven laytime calculations, supporting a major enterprise contract. Designed
+          distributed data replication and event-driven pipelines using AWS SNS/SQS and Lambda, improving
+          system latency and horizontal scalability. Streamlined CI/CD pipelines and infrastructure
+          tooling to boost engineering velocity across Veson's global client base.
         </p>
       </div>
 
@@ -203,25 +218,6 @@
       <div class="project-grid" id="project-list">
 
         <div class="project-card">
-          <img src="images/crypto_drift_guard.png" alt="Crypto Drift Guard" class="project-card-img">
-          <div class="project-card-body">
-            <div class="project-card-title">Crypto Drift Guard</div>
-            <p class="project-card-desc">
-              Research project measuring how cryptocurrency trading-agent decisions drift when
-              tweet-derived sentiment data is mutated. Uses FinBERT to score BTC/ETH tweets and
-              runs deterministic and FinGPT-style agents on baseline and mutated data windows to
-              quantify divergence under sentiment amplification, temporal jitter, and adversarial tweet injection.
-            </p>
-            <div class="project-card-links">
-              <a href="https://github.com/changju784/crypto-drift-guard" target="_blank" rel="noopener noreferrer"
-                class="project-link">
-                <i class="fa fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
           <img src="images/kube_ai_sentry.jpg" alt="KubeAI Sentry" class="project-card-img">
           <div class="project-card-body">
             <div class="project-card-title">KubeAI Sentry</div>
@@ -241,17 +237,19 @@
         </div>
 
         <div class="project-card">
-          <img src="images/trip-circle-detail.jpg" alt="Trip Circle" class="project-card-img">
+          <img src="images/crypto_drift_guard.png" alt="Crypto Drift Guard" class="project-card-img">
           <div class="project-card-body">
-            <div class="project-card-title">Trip Circle</div>
+            <div class="project-card-title">Crypto Drift Guard</div>
             <p class="project-card-desc">
-              Collaborative travel-planning app to create, share, and fork trip itineraries.
-              React + TypeScript frontend with Node.js/Express + MongoDB backend.
+              Research project measuring how cryptocurrency trading-agent decisions drift when
+              tweet-derived sentiment data is mutated. Uses FinBERT to score BTC/ETH tweets and
+              runs deterministic and FinGPT-style agents on baseline and mutated data windows to
+              quantify divergence under sentiment amplification, temporal jitter, and adversarial tweet injection.
             </p>
             <div class="project-card-links">
-              <a href="https://trip-circle-web.vercel.app/" target="_blank" rel="noopener noreferrer"
+              <a href="https://github.com/changju784/crypto-drift-guard" target="_blank" rel="noopener noreferrer"
                 class="project-link">
-                <i class="fa fa-external-link"></i> Live Demo
+                <i class="fa fa-github"></i> GitHub
               </a>
             </div>
           </div>
@@ -326,6 +324,23 @@
         </div>
 
         <div class="project-card">
+          <img src="images/trip-circle-detail.jpg" alt="Trip Circle" class="project-card-img">
+          <div class="project-card-body">
+            <div class="project-card-title">Trip Circle</div>
+            <p class="project-card-desc">
+              Collaborative travel-planning app to create, share, and fork trip itineraries.
+              React + TypeScript frontend with Node.js/Express + MongoDB backend.
+            </p>
+            <div class="project-card-links">
+              <a href="https://trip-circle-web.vercel.app/" target="_blank" rel="noopener noreferrer"
+                class="project-link">
+                <i class="fa fa-external-link"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
           <img src="images/route_recommend.png" alt="Route Recommendation App" class="project-card-img">
           <div class="project-card-body">
             <div class="project-card-title">Route Recommendation App</div>
@@ -375,10 +390,13 @@
         <div class="skill-group">
           <div class="skill-group-label">Domains</div>
           <div class="skill-group-tags">
-            <span class="skill-tag">Full Stack</span>
+            <span class="skill-tag">LLM Inference</span>
+            <span class="skill-tag">GPU Orchestration</span>
+            <span class="skill-tag">Observability</span>
             <span class="skill-tag">Distributed Systems</span>
             <span class="skill-tag">DevOps</span>
             <span class="skill-tag">MLOps</span>
+            <span class="skill-tag">Full Stack</span>
             <span class="skill-tag">Deep Learning</span>
             <span class="skill-tag">Data Mining</span>
             <span class="skill-tag">NLP</span>
@@ -421,9 +439,12 @@
         <div class="skill-group">
           <div class="skill-group-label">Infrastructure</div>
           <div class="skill-group-tags">
-            <span class="skill-tag">AWS</span>
-            <span class="skill-tag">Docker</span>
             <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">GPU Operator</span>
+            <span class="skill-tag">Prometheus / Grafana</span>
+            <span class="skill-tag">DCGM</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">AWS</span>
           </div>
         </div>
 
