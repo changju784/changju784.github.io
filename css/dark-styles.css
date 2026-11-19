@@ -325,8 +325,8 @@ section {
 
 /* org logos inline with company / school name */
 .org-logo {
-  height: 20px;
-  width: 20px;
+  height: 28px;
+  width: 28px;
   object-fit: contain;
   border-radius: 3px;
   vertical-align: middle;
@@ -413,7 +413,7 @@ section {
 
 .exp-meta {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 4px;
